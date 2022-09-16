@@ -1,0 +1,33 @@
+<div class="m-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a *ngIf="!loggedIn" mat-icon-button routerLink="/" class="navbar-brand py-2">Portfolio Management</a>
+            <a *ngIf="loggedIn" routerLink="/dashboard" class="navbar-brand py-2">Portfolio Management</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <li class="nav-item px-3">
+                        <a *ngIf="loggedIn" mat-icon-button routerLink="/sellasset" style="color:black;">Sell Asset</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a *ngIf="loggedIn" mat-icon-button routerLink="/viewasset" style="color:black;">View Asset</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a *ngIf="loggedIn" mat-icon-button routerLink="/currentprice" style="color:black;">Current Price</a>
+                    </li>
+
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <li class="nav-item px-3" >
+                        <a *ngIf="!loggedIn" mat-icon-button routerLink="/login" style="color:black;">Login</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a *ngIf="loggedIn" mat-icon-button (click)="logoutUser()" style="color:black;">Logout</a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
